@@ -9,7 +9,7 @@ console.table([accountId, accountName, accountEmail, accountState, accountCity])
 console.table({accountId, accountName, accountEmail, accountState, accountCity});
 
 /*
-1. The value we define in const keyword cannot be changed.
+1. The value we define in const keyword cannot be changed further.
 2. The value we define in let keyword can be changed further.
 3. The value we define in var keyword can be changed it is not recommended to use var keyword, as we have 
 issue of block scope & functional scope means if we change it will change the value everywhere where we 
