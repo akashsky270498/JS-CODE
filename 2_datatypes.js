@@ -26,3 +26,6 @@ typeof keyword can be used in two ways.
 let age = 18;
 console.log(typeof age);
 console.log(typeof "House of Spirits");
+console.log(typeof null);
+console.log(typeof undefined);
+console.log(typeof symbol);
