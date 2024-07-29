@@ -4,7 +4,7 @@ console.log(3 +
     3
 ); //code readiability is a problem here
 
-console.log(3 + 3); console.log("Strict"); //here also problem with code rediability
+console.log(3 + 3); console.log("Yes done"); //here also problem with code rediability
 
 //alert(3+3) we are using nodejs not browser
 
@@ -26,6 +26,6 @@ typeof keyword can be used in two ways.
 let age = 18;
 console.log(typeof age);
 console.log(typeof "House of Spirits");
-console.log(typeof null);
-console.log(typeof undefined);
-console.log(typeof symbol);
+console.log(typeof null); // ==> object
+console.log(typeof undefined); // => undefined
+console.log(typeof symbol); // => undefined
