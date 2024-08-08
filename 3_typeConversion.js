@@ -42,7 +42,7 @@ console.log(typeof emptyString2);  // =>  boolean
 let emptyString3 = "1asdf";
 let emptyString4 = Boolean(emptyString3);
 console.log("Test_3:", emptyString4); // => true 
-console.log(typeof emptyString4);  // =>  string 
+console.log(typeof emptyString4);  // =>  boolean 
 
 let schoolId = 12345;
 let schoolIdString = String(schoolId); // => 12345
