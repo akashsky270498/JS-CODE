@@ -8,6 +8,7 @@
 const newSymbol = Symbol("Symbol Data");
 
 console.log("Type of newSymbol", newSymbol);
+
 const jsUser = {
     name: "Sreejesh Singh",
     "address": "Park residency, Delhi, IN",
@@ -28,4 +29,84 @@ console.log("Symbol without sqr bracket:", jsUser.newSymbol); // => New Symbol
 console.log("Symbol without sqr bracket datatype:", typeof jsUser.newSymbol); // => string
 console.log("Symbol:", jsUser["newSymbol"]); // => New Symbol
 console.log("Symbol without sqr bracket:", jsUser[newSymbol]); // => Old Symbol (correct way to access symbol)
- 
+
+
+//We can access object value using dot notation & objName["keyName"].
+
+//We can change the value of using dot notation
+jsUser.email = "admin@chatgpt.com";
+
+console.log("jsUser", jsUser);
+
+/*
+jsUser {
+  name: 'Sreejesh Singh',
+  address: 'Park residency, Delhi, IN',
+  newSymbol: 'New Symbol',
+  phoneNumber: 9876543210,
+  location: 'Delhi',
+  email: 'admin@chatgpt.com',
+  age: 19,
+  [Symbol(Symbol Data)]: 'Old Symbol'
+}
+*/
+
+//if we will freeze the object using objectName.object(key) then further changes will not be propogated in the 
+// Object. 
+Object.freeze(jsUser);
+jsUser.email = "admin@paypal.com";
+
+console.log("jsUser after freezing:", jsUser);
+/*
+jsUser after freezing: {
+  name: 'Sreejesh Singh',
+  address: 'Park residency, Delhi, IN',
+  newSymbol: 'New Symbol',
+  phoneNumber: 9876543210,
+  location: 'Delhi',
+  email: 'admin@chatgpt.com',
+  age: 19,
+  [Symbol(Symbol Data)]: 'Old Symbol'
+} 
+*/
+
+
+//************************************************************** 
+const jsUser1 = {
+    name: "House of Spirits",
+    "address": "Park residency, Delhi, IN",
+    newSymbol: "New Symbol",
+    [newSymbol]: "Old Symbol", // here we are using it as symbol
+    phoneNumber: 9876543210,
+    location: "Delhi",
+    email: "admin@gmail.com",
+    age: 19
+}
+
+
+//We can also add function inside objects in JS with a variable name.
+
+jsUser1.greeting = function () {
+    console.log("Welcome to JS");
+}
+
+
+//below: here the refrence is given but the function is not yet executed.
+console.log(jsUser1.greeting); // => [Function (anonymous)]
+console.log(jsUser1.greeting()); // => Welcome to JS
+
+
+// Note: this is a keyword that refers to a context in which a function is executed.
+/* In case of normal object (object method) with this keyword you can extract the value present inside that 
+object with this.keyName.*/
+
+jsUser1.greetingTWo = function() {
+    console.log(`Welcome to JS world, ${this.name}`); 
+}
+
+console.log(jsUser1.greetingTWo()); // => Welcome to JS world, House of Spirits
+
+
+
+
+
