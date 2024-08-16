@@ -11,7 +11,7 @@ literals.isLoggedIn = false;
 console.log(literals);
 
 const nestedObj = {
-    fullname:  {
+    fullname: {
         userFullname: {
             firstName: "Ashish",
             lastName: "Singh"
@@ -40,20 +40,20 @@ console.log(obj5)
 }
 */
 
-const obj6 = Object.assign({},obj1, obj2)
+const obj6 = Object.assign({}, obj1, obj2)
 /*
 Object.assign({}, obj1, obj2) Explanation:
 Object.assign copies the properties from the source objects (obj1, obj2) into the target object (an empty object {} in this case).
 Since both obj1 and obj2 have the same keys (name and class), the values from obj2 overwrite those from obj1 in the target object.
 */
 console.log(obj6) // => { name: 'second', class: 'seventh' }
-const obj8 = { ...obj1, ...obj2, ...obj3, ...obj4}
-console.log("obj8",obj8) // => { name: 'fourth', class: 'ninth' }
+const obj8 = { ...obj1, ...obj2, ...obj3, ...obj4 }
+console.log("obj8", obj8) // => { name: 'fourth', class: 'ninth' }
 
-obj11 = { 1: "a", 2: "b", 3: "c"};
-obj12 = { 4: "d", 5: "e", 6: "f"};
-const obj15 = {obj11, obj12}
-console.log(obj15) 
+obj11 = { 1: "a", 2: "b", 3: "c" };
+obj12 = { 4: "d", 5: "e", 6: "f" };
+const obj15 = { obj11, obj12 }
+console.log(obj15)
 /*
 {
   obj11: { '1': 'a', '2': 'b', '3': 'c' },
@@ -71,10 +71,10 @@ console.log("dfghjkl;", obj11) // =>{ '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5
 const obj14 = Object.assign({}, obj11, obj12);
 console.log(obj14); // => { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
 
-const obj16 = { ...obj11, ...obj12}
+const obj16 = { ...obj11, ...obj12 }
 console.log(obj16) // => { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
 
-const obj18 = { ...obj11, obj12}
+const obj18 = { ...obj11, obj12 }
 console.log(obj18)
 /*
 {
@@ -99,8 +99,8 @@ console.log(students[0].name); // => Alice
 console.log(students[2].major); // => Physics
 
 
-  
-  
+
+
 
 console.log(Object.keys(literals)); // => [ 'id', 'name', 'isLoggedIn' ]
 console.log(Object.values(literals)); // => [ 'tin1234', 'Ashish', false ]
@@ -109,3 +109,22 @@ console.log(literals.hasOwnProperty('isLoggedIn')); // => true
 console.log(literals.hasOwnProperty('name')); // => true
 console.log(literals.hasOwnProperty('age')); // => false
 
+
+//Object Destructuring
+
+const course = {
+    courseName: "Javascript",
+    courseId: "C12345",
+    courseInstructor: "Daniel"
+}
+
+//normal way
+console.log(course.courseInstructor);
+
+const { courseId, courseInstructor: instructor } = course;
+
+console.log(courseId); // => C12345
+console.log(instructor); // => Daniel
+
+
+//Note: JSON can be object also & array of objects also.
