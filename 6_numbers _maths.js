@@ -34,10 +34,10 @@ console.log("Maths:",Math); // Math object();
  +ve value to -ve, +ve will remain +ve */
 console.log(Math.abs(-483)); // 483 
 /* Math.round() will roundoff the value.*/
-console.log("Greater than 5 means bigger side:",Math.round(4.6));
-console.log("Lesser than 5 means smaller side:",Math.round(4.2));
-console.log("Ceil means bigger side:",Math.ceil(4.2));
-console.log("Floor means smaller side:",Math.floor(4.9));
+console.log("Greater than 5 means bigger side:",Math.round(4.6)); // => 5
+console.log("Lesser than 5 means smaller side:",Math.round(4.2)); // => 4
+console.log("Ceil means bigger side:",Math.ceil(4.2)); // => 5
+console.log("Floor means smaller side:",Math.floor(4.9)); // => 4
 
 //Math.random() will generate random numbers between 0 to 1.
 console.log(Math.random());
