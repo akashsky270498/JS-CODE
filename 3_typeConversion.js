@@ -9,6 +9,7 @@ console.log(typeof accountName);
 
 let numberActName = Number(accountName);
 console.log(numberActName) // => NaN
+console.log(typeof numberActName) // => number
 
 let marks = "33";
 let NumberMarks = Number(marks);
