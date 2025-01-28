@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Element</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement("li")
+        li.innerHTML = `${langName}`
+        const addLi = document.querySelector('.language')
+        addLi.appendChild(li)
+    }
+
+    addLanguage("Python");
+    addLanguage("Typescript");
+    addLanguage("Java");
+
+    // The above method will traverse the tree everytime we add the new element in the list so below method is recommended for large scale project
+
+    const addOptimizeLanguage = (addLanguage) => {
+        const addLang = document.createElement('li')
+        addLang.appendChild(document.createTextNode(addLanguage));
+        document.querySelector('.language').appendChild(addLang)
+        
+    }
+
+    addOptimizeLanguage("golang")
+
+    //Edit 
+    const thirdLanguage = document.querySelector('li:nth-child(2)')
+    // thirdLanguage.innerHTML = "rust"
+    const newLi = document.createElement('li');
+    newLi.textContent = "Rust";
+    thirdLanguage.appendChild(newLi)
+
+    const firstLang = document.querySelector('li:first-child')
+    // firstLang.outerHTML = '<li>PHP</li>'
+    firstLang.textContent = "PHP"
+
+    //remove
+    const removeLastElement = document.querySelector('li:last-child')
+    console.log(removeLastElement)
+    // removeLastElement.remove()
+</script>
+
+</html>

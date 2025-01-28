@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events 3</title>
+</head>
+
+<body>
+    <h1>Events</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval(() => {
+    //     console.log("Set Time Interval", Date.now());
+    // }, 1000);
+
+    // const dateAndString = function () {
+    //     console.log(Date.now(), "Hi");
+    // }
+
+    // setInterval(dateAndString, 1000)
+
+    //setInterval also takes 3rd parameter.
+
+    // const sampleData = function (str) {
+    //     console.log(str, Date.now());
+    // }
+
+    // const intervalId = setInterval(sampleData, 2000, "args");
+
+    // clearInterval(intervalId)
+
+    let startInterval;
+
+    document.querySelector('#start').addEventListener('click', function () {
+        const data = function () {
+            console.log("Start", Date.now());
+        }
+
+        startInterval = setInterval(data, 1000);
+    });
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearInterval(startInterval)
+        console.log("stopped");
+    })
+
+
+</script>
+
+</html>

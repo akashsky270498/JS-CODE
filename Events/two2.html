@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+
+<body>
+    <h1>Async & Await</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHi = function () {
+        console.log("Hi");
+    }
+
+    setTimeout(sayHi, 2000);
+
+    setTimeout(function () {
+        console.log("I will take 3 seconds.");
+    }, 3000);
+
+    const changeText = function () {
+        document.querySelector('h1').innerHTML = "Promises in JS"
+    }
+
+    const stopMe = setTimeout(changeText, 5000)
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearTimeout(stopMe);
+        console.log("Stopped");
+    })
+</script>
+
+</html>

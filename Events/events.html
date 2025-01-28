@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body style="background-color: black; color: seagreen;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images" ">
+            <li><img width=" 200px" id="cricket"
+            src="https://images.pexels.com/photos/3800541/pexels-photo-3800541.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="cricket">
+            </li>
+            <li><img width="200px" id="moon"
+                    src="https://images.pexels.com/photos/821718/pexels-photo-821718.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="moon"></li>
+            <li><img width="200px" id="stars"
+                    src="https://images.pexels.com/photos/631477/pexels-photo-631477.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="stars"></li>
+            <!-- <li><img width="200px" id="sky"
+                    src="https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="sky" onclick="alert('You clicked on SKY!!')"></li> -->
+            <!-- Above line is not recommended -->
+            <li><img width="200px" id="sea"
+                    src="https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="sea"></li>
+            <li><a href="https://www.google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('stars').onclick = function () {
+    //     alert('You clicked on the Stars.')
+    // }
+
+    // document.getElementById('stars').onclick = () => {
+    //     alert('You clicked on the Stars.');
+    // };
+
+    //Above line of code is also not recommended
+
+    //Below line of code is also recommended
+    // document.getElementById('sea').addEventListener('click', function () {
+    //     alert('You clicked on the Sea.')
+    // })
+
+    //Event Bubbling -> BOTTOM to TOP
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log(e)
+    //     console.log("You clicked on Images.");
+    // }, false)
+
+    // document.getElementById('sea').addEventListener('click', function (e) {
+    //     console.log("You clicked on Sea.");
+    //     e.stopPropagation() //Now it will not bubble & Outer element will not propogate
+    // }, false)
+
+    //Event Capturing -> TOP to BOTTOM
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log(e)
+    //     console.log("You clicked on Images.");
+    // }, true)
+
+    // document.getElementById('sea').addEventListener('click', function (e) {
+    //     console.log("You clicked on Sea.");
+    //     e.stopPropagation() //Will not work in capturing case.
+    // }, true)
+
+    //preventDefault()\
+    // document.getElementById('google').addEventListener('click', function(e) {
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("You clciked on google");
+    // }, false)
+
+    //Below code if we will click on the list all the things will remove
+    // document.querySelector('#images').addEventListener('click', function (e) {
+
+    //     console.log(e.target.parentNode);
+    //     let removeIt = e.target.parentNode;
+    //     removeIt.remove();
+    //     // removeIt.parentNode.removeChild(removeIt)
+    // })
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode;
+            removeIt.remove()
+        }        
+    })
+
+
+</script>
+
+</html>
